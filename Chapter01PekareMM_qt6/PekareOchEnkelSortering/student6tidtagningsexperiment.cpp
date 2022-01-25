@@ -53,6 +53,11 @@ void ragnarsTidtagningsexperiment(){
     TODO
     Körtider:
 
+    Bubble index: 		22.7 sek
+    Bubble Pointer:		19.6 sek
+    Insert Index: 		3.02 sek
+    Insert Pointer: 	2.6 sek
+    std::sort:			0.002 sek
 
   */
 }

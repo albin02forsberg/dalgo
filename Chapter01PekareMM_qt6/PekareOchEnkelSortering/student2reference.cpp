@@ -79,6 +79,14 @@ void experimentMedParameteroverforing(){
        Skriv din förklaring här:
        (förklara allt som efterfrågas i kompendiet!)
 
+       1. Adress 2 och 3 skriver ut samma addresser eftersom att det inte skapas någon
+       ny struct, jämfört med address 1 som kopierar den befintliga.
+       2 och 3 är by value och by pointer.
+
+       2. Address 1 skriver ut mindre adderesser eftersom den ligger högre upp i stacken.
+
+       3. Vi kan se om vi jämför s.m_intValue1 och 2 att det skiljer 4 byte mellan de adresserna, eftersom en
+       int är 4 byte lång.
 
 
      */

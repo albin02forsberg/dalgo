@@ -17,13 +17,18 @@ const char* nameOfTheStudent3(){
 // UPPGIFT: Byter värden mellan a och b.
 void swap(float* pA, float* pB){
     // TODO
+    float temp = *pB;
+    *pB = *pA;
+    *pA = temp;
+
 }
 
 // ANROP:   swap(a,b); eller swap((a), (b));
 // UPPGIFT: Byter värden mellan a och b.
 void swap(float &a, float &b){
-    // TODO
-
+    float a0 = a;
+    a = b;
+    b = a0;
 }
 
 // För att öva på referenser ger jag här en
@@ -48,6 +53,10 @@ void testaMax(){
 
     /* OBS! Förklara vad ovanstående max(a,b) = 1 gör, och varför!
      *
+     * max kollar vilket det största värdet av a och b är, och retunerar detta talet.
+     * I detta fallet är b störst, i och med att vi skriver max(a,b) = 1, kommer värdet
+     * som retuneras bli 1. dvs a = 42, b = 1. Hade det varit a = 108 och b = 42,
+     * hade a = 1 och b = 42.
      *
      */
 
@@ -57,6 +66,26 @@ void testaMax(){
 void studentsTest3(){
   // TODO! Skriv din testkod här
   // Testa båda dina swap versioner
+
+    float a = 5;
+    float b = 9;
+    float a0 = 5;
+    float b0 = 9;
+
+    std::cout << "Swap med pekare: \n";
+
+    swap(&a, &b);
+
+    assert(a == b0 && b == a0);
+
+    std::cout << "Swap med referens: \n";
+
+    a0 = 9;
+    b0 = 5;
+
+    swap(a, b);
+
+    assert(a == b0 && b == a0);
 }
 
 

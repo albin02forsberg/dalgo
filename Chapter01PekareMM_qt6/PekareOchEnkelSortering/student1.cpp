@@ -57,9 +57,15 @@ float minimumI(const float *pBegin, const float *pEnd){
 // UPPGIFT: Returnerar arrayens största värde
 // ************************************************************
 float maximumI(const float *pBegin, const float *pEnd){
-
     // TODO
+    float max = pBegin[0];
+    for(int i = 0; i < pEnd - pBegin; i++){
+        if(pBegin[i] > max){
+            max = pBegin[i];
+        }
+    }
 
+    return max;
 }
 
 
@@ -68,9 +74,13 @@ float maximumI(const float *pBegin, const float *pEnd){
 // UPPGIFT: Returnerar summan av alla element.
 // ************************************************************
 float sumI(const float *pBegin, const float *pEnd){
+    float sum = 0;
 
-    // TODO
+    for(int i = 0; i < pEnd - pBegin; i++){
+        sum += pBegin[i];
+    }
 
+    return sum;
 }
 
 
@@ -81,7 +91,9 @@ float sumI(const float *pBegin, const float *pEnd){
 void fillRandomI(float *pBegin, float *pEnd){
     // TODO
 
-
+    for(int i = 0; i < pEnd - pBegin; i++){
+        pBegin[i] = arc4random() % 10;
+    }
 }
 
 // ************************************************************
@@ -89,6 +101,8 @@ void fillRandomI(float *pBegin, float *pEnd){
 // UPPGIFT: Fyller arrayen med sorterat slumpdata. Minst först
 // ************************************************************
 void fillSortedRandomI(float *pBegin, float *pEnd){
+    fillRandomI(pBegin, pEnd);
+    sort(pBegin, pEnd);
 
 }
 
@@ -99,7 +113,13 @@ void fillSortedRandomI(float *pBegin, float *pEnd){
 // UPPGIFT: Returnerar true om arrayen ett värde i det halvt öppna intervallet min <= x < max.
 // ************************************************************
 bool  hasValueInRangeI(float min, float max, const float *pBegin, const float *pEnd){
+    for(int i = 0; i < pEnd - pBegin; i++){
+        if(pBegin[i] >= min && pBegin[i] < max){
+            return true;
+        }
+    }
 
+    return false;
 }
 
 // ************************************************************
@@ -107,7 +127,15 @@ bool  hasValueInRangeI(float min, float max, const float *pBegin, const float *p
 // UPPGIFT: Returnerar antalet värden som ligger i det halvt öppna intervallet  min <= x < max.
 // ************************************************************
 int numberOfValuesInRangeI(float min, float max, const float *pBegin, const float *pEnd){
+    int n = 0;
 
+    for(int i = 0; i < pEnd - pBegin; i++){
+        if(pBegin[i] >= min && pBegin[i] <= max){
+            n++;
+        }
+    }
+
+    return n;
 }
 
 
@@ -134,42 +162,74 @@ float minimumP(const float *pBegin, const float *pEnd){
 
 
 float maximumP(const float *pBegin, const float *pEnd){
-    // TODO
+    float max = *pBegin;
+    for(const float *p=pBegin; p<pEnd; p++){
+        if(*p > max){
+            max = *p;
+        }
+    }
 
+    return max;
 }
 
 float sumP(const float *pBegin, const float *pEnd){
-    // TODO
+    float sum = 0;
 
+    for(const float *p=pBegin; p<pEnd; p++){
+        sum += *p;
+    }
+
+    return sum;
 }
 
 void fillRandomP(float *pBegin, float *pEnd){
-    // TODO
-
+    for(float *p=pBegin; p<pEnd; p++){
+        *p = arc4random() % 10;
+    }
 }
 
 
 
 void fillSortedRandomP(float *pBegin, float *pEnd){
-    // TODO
+    fillRandomP(pBegin, pEnd);
+    sort(pBegin, pEnd);
 }
 
 
 
 bool hasValueInRangeP(float min, float max, const float *pBegin, const float *pEnd){
-    // TODO
+    for(const float *p = pBegin; p < pEnd; p++){
+        if(*p >= min && *p < max){
+            return true;
+        }
+    }
 
+    return false;
 }
 
 
 int  numberOfValuesInRangeP(float min, float max, const float *pBegin, const float *pEnd){
-    // TODO
-
-
+    int n = 0;
+    for(const float *p = pBegin; p < pEnd; p++){
+        if(*p >= min && *p <= max){
+            n++;
+        }
+    }
+    return n;
 }
 
 
 // ################ Skriv din egen testkod här! #################
+
+bool testSorted(float *pBegin, float *pEnd){
+    for(int i = 1; i < pEnd - pBegin; i++){
+        if(pBegin[i] < pBegin[i-1]){
+            return false;
+        }
+    }
+
+    return true;
+}
 
 
 void studentsTest1(){
@@ -198,8 +258,47 @@ void studentsTest1(){
 
     cout << "(dina egna tester borde komma har!)\n";
 
-    // TODO
+    cout << "Testar min och max: ";
 
+    float arr [] = {1,2,3,4,5};
+
+    assert(minimumI(&arr[0], &arr[5]) == 1 && maximumI(&arr[0], &arr[5]) == 5 &&
+           maximumP(&arr[0], &arr[5]) == 5 && minimumP(&arr[0], &arr[5]) == 1);
+
+    std::cout << "Passed\n";
+    std::cout << "Testing range: ";
+
+    assert(hasValueInRangeI(3,5, &arr[0], &arr[5]) && numberOfValuesInRangeI(3,5, &arr[0], &arr[5]) == 3);
+    assert(hasValueInRangeP(3,5, &arr[0], &arr[5]) && numberOfValuesInRangeP(3,5, &arr[0], &arr[5]) == 3);
+
+    std::cout << "Passed!\n";
+
+    std::cout << "Testing sum: ";
+
+    assert(sumI(&arr[0], &arr[5]) == 15 && sumP(&arr[0], &arr[5]) == 15);
+
+    std::cout << "Passed!\n";
+
+    hasValueInRangeP(3,5, &arr[0], &arr[5]);
+
+    std::cout << "Testar fillArrayRandom: ";
+
+    fillRandomI(&arr[0], &arr[5]);
+    fillRandomP(&arr[0], &arr[5]);
+
+    std::cout << "Passed\n";
+
+    std::cout << "Testart fillSorted: ";
+
+    fillSortedRandomI(&arr[0], &arr[5]);
+
+    assert(testSorted(&arr[0], &arr[5]));
+
+    fillSortedRandomP(&arr[0], &arr[5]);
+
+    assert(testSorted(&arr[0], &arr[5]));
+
+    std::cout << "Passed!\n";
 }
 
 

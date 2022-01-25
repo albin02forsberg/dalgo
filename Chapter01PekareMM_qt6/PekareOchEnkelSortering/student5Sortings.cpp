@@ -20,7 +20,7 @@ using namespace std;
 // UPPGIFT: Returnerar ditt namn!
 // ************************************************************
 const char* nameOfTheStudent5(){
-    return "Homer Simpson";  // Byt ut denna sträng mot ditt eget namn!
+    return "Albin Forsberg";  // Byt ut denna sträng mot ditt eget namn!
 }
 
 
@@ -81,6 +81,13 @@ void insertSortP(float *pBegin, float *pEnd){
 void bubbleSortP(float *pBegin, float *pEnd){
     // TODO skall skrivas av studenten
 
+    for(float *pMax=pEnd-1; pMax != pBegin; pMax--){
+        for(float *pI = pBegin; pI < pMax; pI++){
+            if(*pI > *(pI+1)){
+                swap(pI, (pI+1));
+            }
+        }
+    }
 }
 
 
@@ -97,10 +104,29 @@ void bubbleSortP(float *pBegin, float *pEnd){
  *
  * ********************************************************************************/
 void insertSortI(float *pBegin, float *pEnd){
-    // TODO skall skrivas av studenten
+    int size = pEnd - pBegin;
+    for(int i = 1; i < size; i++){
+        float x = pBegin[i];
 
+        int j = i-1;
+
+        for(; pBegin[j] > x && j >= 0; j--){
+            pBegin[j+1] = pBegin[j];
+        }
+
+        pBegin[j+1] = x;
+    }
 }
 
+
+bool testSort(float *pBegin, float *pEnd){
+    for(int i = 1; i < pEnd - pBegin; i++){
+        if(pBegin[i] < pBegin[i-1]){
+            return false;
+        }
+    }
+    return true;
+}
 
 
 
@@ -108,6 +134,27 @@ void studentsTest5(){
 
     // Testa själv bubble- och insert- sort här!
     cout << "Dina egna tester måste komma haer!\n";
+
+    std::cout << "Testar sortering: ";
+
+    float arr[] = {4,2,5,1,6};
+
+    std::cout << "Testar bubble sort med pekare:\n";
+
+
+    bubbleSortP(&arr[0], &arr[5]);
+
+    assert(testSort(&arr[0], &arr[5]));
+
+    std::cout << "Testar insertSort med indexsering:\n";
+
+    float arr2[] = {4, 2, 5, 1, 6};
+
+    insertSortI(&arr2[0], &arr2[5]);
+
+    assert(testSort(&arr2[0], &arr2[5]));
+
+    std::cout << "Passed!\n";
 
     // TODO
 

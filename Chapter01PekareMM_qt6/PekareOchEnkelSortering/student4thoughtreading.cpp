@@ -28,7 +28,10 @@ void experimentMedTankeoverforing(){
     /* TODO
        Förklaring:
 
-
+       Variabeln hemlighet kommer att få samma värde som x eftersom
+       x ligger stacken. Eftersom hemligheten inte har något värde tilldelat kommmer
+       den att få ett "skräpvärde", men eftersom att x ligger på den adressen kommer
+       skräpvärder vara 108.
 
      */
 }
