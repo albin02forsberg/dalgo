@@ -1,0 +1,14 @@
+<RCC>
+    <qresource prefix="/">
+        <file>images/turtle.png</file>
+        <file>images/rabbit.png</file>
+        <file>images/rocket.png</file>
+        <file>images/play1.png</file>
+        <file>images/reset.png</file>
+        <file>sounds/drop.wav</file>
+        <file>sounds/error.wav</file>
+        <file>sounds/claps2.wav</file>
+        <file>sounds/claps.wav</file>
+        <file>images/resetCol.png</file>
+    </qresource>
+</RCC>

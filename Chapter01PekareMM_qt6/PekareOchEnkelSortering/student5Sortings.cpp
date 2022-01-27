@@ -110,7 +110,7 @@ void insertSortI(float *pBegin, float *pEnd){
 
         int j = i-1;
 
-        for(; pBegin[j] > x && j >= 0; j--){
+        for(; j >= 0 && pBegin[j] > x; j--){
             pBegin[j+1] = pBegin[j];
         }
 
