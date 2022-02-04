@@ -15,14 +15,13 @@ const char* nameOfStudent2(){
 const float* pointerToFirstElementGreaterOrEqualToX(float x, const float* pBegin, const float* pEnd){
     // TODO denna implementering är felaktig
 
-    if(pBegin != pEnd){
-        if(*pBegin >= x) {
-            return pBegin;
-        }
-        return pointerToFirstElementGreaterOrEqualToX(x, pBegin + 1, pEnd);
-    }
+    int size = pEnd - pBegin;
 
-    return pEnd;
+    const float *pMid = pBegin - (size/2);
+
+//    for(float *i = pBegin; i < pMid; i++){
+//        if()
+//    }
 
 }
 

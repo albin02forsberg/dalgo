@@ -7,7 +7,7 @@ using namespace std;
 bool ragnarsTest1();
 
 string nameOfStudent(){
-    return "Homer Simpson";
+    return "Albin Forsberg";
 }
 
 /**********************************************************
@@ -30,10 +30,11 @@ ANROP:   int s = sum(a,b);
 UPPGIFT: Returnerar a+b;
 ***********************************************************/
 int sum(int a, int b){
- // TODO
- // Nedanstående implementering är ogiltig.
- // ändra!! (och tag bort denna kommentar)
-   return 0;
+//    std::cout << "a: " << a << " b: " << b << std::endl;
+    if(b == 0){
+        return a;
+    }
+    return sum(oneMore(a), oneLess(b));
 }
 
 /**********************************************************
@@ -41,11 +42,10 @@ ANROP:   int d = diff(a,b);
 UPPGIFT: Returnerar a-b;
 ***********************************************************/
 int diff(int a, int b){
-
- // TODO
-    // Nedanstående implementering är ogiltig.
-    // ändra!! (och tag bort denna kommentar)
-   return 0;
+    if(b == 0){
+        return a;
+    }
+    return diff(oneLess(a), oneLess(b));
 }
 
 /**********************************************************
@@ -53,11 +53,12 @@ ANROP:   int prod = product(a,b);
 UPPGIFT: Returnerar a*b;
 ***********************************************************/
 int product(int a, int b){
-
- // TODO
-    // Nedanstående implementering är ogiltig.
-    // ändra!! (och tag bort denna kommentar)
-   return 0;
+    if(b == 0){
+        std::cout << "Return : " << a << std::endl;
+        return a;
+    }
+    std::cout << "a: " << a << " b: " << b << std::endl;
+    return product(sum(a,a),oneLess(b));
 }
 
 /**********************************************************

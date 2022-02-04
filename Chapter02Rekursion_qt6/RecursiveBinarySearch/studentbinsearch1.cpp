@@ -22,25 +22,29 @@ OBS:      Alla tal mellan pBegin och pEnd måste vara sorterade i
           stigande ordning
 *****************************************************************/
 bool containedInSortedarray(int x, const int* pBegin, const int* pEnd){
-    int size = (pEnd - pBegin);
-    int mid = size / 2;
-    int const *pMid = pBegin + mid;
+    int size = pEnd - pBegin;
+    int const *pMid = pBegin + (size/2);
+//    std::cout << *pMid << std::endl;
 
-    if(*pMid == x){
-        return true;
-    }
-
-    if(pBegin == pEnd){
+    if(size <= 0){
         return false;
     }
 
-    if(x > *pMid){
-        return containedInSortedarray(x, pMid + 1 , pEnd);
-    } else if (x < *pMid){
-        return containedInSortedarray(x, pBegin, pMid-1);
+    if(size == 1) {
+        if(*pBegin == x){
+            return true;
+        }
+        return false;
     }
 
-    return false;
+
+    if(x < *pMid){
+        return containedInSortedarray(x, pBegin , pMid);
+    } else if (x > *pMid){
+        return containedInSortedarray(x, pMid, pEnd);
+    }
+
+    return true;
 }// contains
 
 
@@ -48,26 +52,26 @@ bool containedInSortedarray(int x, const int* pBegin, const int* pEnd){
 
 void studentsTest1(){
 
-    cout << "Har borde studentens testresultat synas" << endl << endl;
+//    cout << "Har borde studentens testresultat synas" << endl << endl;
 
-   // TODO din egen testkod som anropar contains här
+//   // TODO din egen testkod som anropar contains här
 
-    int arr[] = {1,2,3,4,5,6};
+//    int arr[] = {1,2,3,4,5,6};
 
 
-    std::cout << "Testing binary search:\n";
+//    std::cout << "Testing binary search:\n";
 
-    for(int i = 0; i < 6; i++){
-        assert(containedInSortedarray(arr[i], &arr[0], &arr[6]));
-        std::cout << i << " exsists\n";
-    }
+//    for(int i = 0; i < 6; i++){
+//        assert(containedInSortedarray(arr[i], &arr[0], &arr[6]));
+//        std::cout << i << " exsists\n";
+//    }
 
-    for(int i = 7; i < 13; i++){
-        assert(!containedInSortedarray(i, &arr[0], &arr[6]));
-        std::cout << i <<  " does not exsist\n";
-    }
+//    for(int i = 7; i < 13; i++){
+//        assert(!containedInSortedarray(i, &arr[0], &arr[6]));
+//        std::cout << i <<  " does not exsist\n";
+//    }
 
-    int arr2[] = {1,3,5};
+//    int arr2[] = {1,3,5};
 
 //    assert(!containedInSortedarray(5, &arr2[0], &arr2[1]));
 
@@ -77,6 +81,6 @@ void studentsTest1(){
 //    assert(!containedInSortedarray(5, &arr2[1], &arr2[2]));
 //    assert(containedInSortedarray(3, &arr2[1], &arr2[2]));
 
-    std::cout << "Passed!\n";
+//    std::cout << "Passed!\n";
 
 }

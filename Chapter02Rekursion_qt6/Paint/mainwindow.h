@@ -22,8 +22,8 @@ class MainWindow : public QMainWindow, public IDrawingParent
     QActionGroup *_penGroup = nullptr;
     QActionGroup *_speedGroup = nullptr;
 
-    const int  _numberOfRows   = 30;
-    const int _numberOfColumns = 50;
+    const int  _numberOfRows   = 60;
+    const int _numberOfColumns = 100;
 
     bool      _doDelaySetpixel = true;
     int       _durationOfSetpixel = 10;
