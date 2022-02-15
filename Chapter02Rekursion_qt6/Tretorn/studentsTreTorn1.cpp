@@ -18,22 +18,11 @@ int otherPin(int pinFrom, int pinTo){
 
 
 void moveDiscs(int numberOfDiscs, int pinFrom, int pinTo){
-    // 1 > 3 - 2
-    // 1 > 2 - 3
-    // 3 > 2 - 1
-    // 1 > 3 - 2
-    // 2 > 1 - 3
-    // 2 > 3 - 1
-    // 1 > 3 - 2
-    // 1 > 2 - 3
-
-    if(otherPin(pinFrom, pinTo) == 0){
-        moveDiscs(numberOfDiscs,0,2);
-    } else {
-        moveDiscs(numberOfDiscs, 2,1);
+    if(numberOfDiscs == 0){
+        return;
     }
 
-    return;
+    moveDiscs(numberOfDiscs-1, pinFrom, otherPin(pinFrom, pinTo));
+    TOWERS.moveDisc(pinFrom, pinTo);
+    moveDiscs(numberOfDiscs-1, otherPin(pinFrom,pinTo), pinTo);
 }
-
-
