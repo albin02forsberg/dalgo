@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>547</width>
+    <height>415</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="MapWidget" name="centralWidget"/>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>547</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuGrafer">
+    <property name="title">
+     <string>Grafer</string>
+    </property>
+    <addaction name="actionUSA"/>
+    <addaction name="actionUSA_FLYG"/>
+    <addaction name="actionRandom_A"/>
+    <addaction name="action5Noder"/>
+   </widget>
+   <widget class="QMenu" name="menuTest">
+    <property name="title">
+     <string>Test</string>
+    </property>
+    <addaction name="actionRagnarsTest"/>
+   </widget>
+   <widget class="QMenu" name="menuModifieringar">
+    <property name="title">
+     <string>Modifieringar</string>
+    </property>
+    <addaction name="actionAstar"/>
+   </widget>
+   <addaction name="menuGrafer"/>
+   <addaction name="menuTest"/>
+   <addaction name="menuModifieringar"/>
+  </widget>
+  <widget class="QToolBar" name="mainToolBar">
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="actionUSA"/>
+   <addaction name="actionUSA_FLYG"/>
+   <addaction name="action5Noder"/>
+   <addaction name="actionRandom_A"/>
+   <addaction name="actionLenna"/>
+   <addaction name="actionLenna_diff"/>
+   <addaction name="separator"/>
+   <addaction name="actionRagnarsTest"/>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+  <action name="actionUSA">
+   <property name="text">
+    <string>USA</string>
+   </property>
+  </action>
+  <action name="actionRandom_A">
+   <property name="text">
+    <string>Random A</string>
+   </property>
+  </action>
+  <action name="actionUSA_FLYG">
+   <property name="text">
+    <string>USA+FLYG</string>
+   </property>
+  </action>
+  <action name="action5Noder">
+   <property name="text">
+    <string>5Noder</string>
+   </property>
+  </action>
+  <action name="actionRagnarsTest">
+   <property name="text">
+    <string>RagnarsTest</string>
+   </property>
+  </action>
+  <action name="actionAstar">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>A*</string>
+   </property>
+  </action>
+  <action name="actionShortest2">
+   <property name="text">
+    <string>Shortest2</string>
+   </property>
+  </action>
+  <action name="actionLenna">
+   <property name="text">
+    <string>Lenna</string>
+   </property>
+  </action>
+  <action name="actionLenna_diff">
+   <property name="text">
+    <string>Lenna diff</string>
+   </property>
+  </action>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <customwidgets>
+  <customwidget>
+   <class>MapWidget</class>
+   <extends>QWidget</extends>
+   <header>mapwidget.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>

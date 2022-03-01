@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>575</width>
+    <height>376</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="MazeWidget" name="centralWidget">
+   <property name="minimumSize">
+    <size>
+     <width>200</width>
+     <height>200</height>
+    </size>
+   </property>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>575</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuMaze">
+    <property name="title">
+     <string>Maze</string>
+    </property>
+    <addaction name="separator"/>
+    <addaction name="actionUniqpath"/>
+    <addaction name="actionfMuliplepath"/>
+   </widget>
+   <widget class="QMenu" name="menuVisualisering">
+    <property name="title">
+     <string>Visualisering</string>
+    </property>
+    <addaction name="actionSlow"/>
+    <addaction name="actionNormal"/>
+    <addaction name="actionFast"/>
+    <addaction name="actionUltrafast"/>
+   </widget>
+   <widget class="QMenu" name="menuAlgoritm">
+    <property name="title">
+     <string>Algoritm</string>
+    </property>
+    <addaction name="actionSearchRecursive"/>
+    <addaction name="actionSearchFIFO"/>
+   </widget>
+   <addaction name="menuMaze"/>
+   <addaction name="menuVisualisering"/>
+   <addaction name="menuAlgoritm"/>
+  </widget>
+  <widget class="QToolBar" name="mainToolBar">
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="actionfMuliplepath"/>
+   <addaction name="actionUniqpath"/>
+   <addaction name="separator"/>
+   <addaction name="actionSlow"/>
+   <addaction name="actionNormal"/>
+   <addaction name="actionFast"/>
+   <addaction name="actionUltrafast"/>
+   <addaction name="separator"/>
+   <addaction name="actionSearchRecursive"/>
+   <addaction name="actionSearchFIFO"/>
+   <addaction name="separator"/>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+  <action name="actionSlow">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="recources.qrc">
+     <normaloff>:/images/turtle.png</normaloff>:/images/turtle.png</iconset>
+   </property>
+   <property name="text">
+    <string>långsam</string>
+   </property>
+  </action>
+  <action name="actionNormal">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="recources.qrc">
+     <normaloff>:/images/rabbit.png</normaloff>:/images/rabbit.png</iconset>
+   </property>
+   <property name="text">
+    <string>lagom</string>
+   </property>
+  </action>
+  <action name="actionFast">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="recources.qrc">
+     <normaloff>:/images/rocket.png</normaloff>:/images/rocket.png</iconset>
+   </property>
+   <property name="text">
+    <string>snabb</string>
+   </property>
+  </action>
+  <action name="actionUltrafast">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="recources.qrc">
+     <normaloff>:/images/cspeed.png</normaloff>:/images/cspeed.png</iconset>
+   </property>
+   <property name="text">
+    <string>supersnabb</string>
+   </property>
+  </action>
+  <action name="actionSearchRecursive">
+   <property name="text">
+    <string>Rekursiv</string>
+   </property>
+  </action>
+  <action name="actionSearchFIFO">
+   <property name="text">
+    <string>FIFO</string>
+   </property>
+  </action>
+  <action name="actionUniqpath">
+   <property name="icon">
+    <iconset resource="recources.qrc">
+     <normaloff>:/images/single.png</normaloff>:/images/single.png</iconset>
+   </property>
+   <property name="text">
+    <string>unikvägslabyrint</string>
+   </property>
+   <property name="toolTip">
+    <string>endast en väg mellan start &amp; mål</string>
+   </property>
+  </action>
+  <action name="actionfMuliplepath">
+   <property name="icon">
+    <iconset resource="recources.qrc">
+     <normaloff>:/images/multiple.png</normaloff>:/images/multiple.png</iconset>
+   </property>
+   <property name="text">
+    <string>flervägslabyrint</string>
+   </property>
+   <property name="toolTip">
+    <string>flera vägar mellan start &amp; mål</string>
+   </property>
+  </action>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <customwidgets>
+  <customwidget>
+   <class>MazeWidget</class>
+   <extends>QWidget</extends>
+   <header>mazewidget.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <resources>
+  <include location="recources.qrc"/>
+ </resources>
+ <connections/>
+</ui>

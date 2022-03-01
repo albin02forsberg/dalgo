@@ -1,0 +1,12 @@
+<RCC>
+    <qresource prefix="/">
+        <file>images/cspeed.png</file>
+        <file>images/rabbit.png</file>
+        <file>images/rocket.png</file>
+        <file>images/rtest.png</file>
+        <file>images/turtle.png</file>
+        <file>images/multiple.png</file>
+        <file>images/single.png</file>
+        <file>images/app.icns</file>
+    </qresource>
+</RCC>
