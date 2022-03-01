@@ -22,9 +22,9 @@ hur du gjort analysen!
 ----------------------------------------------------------
             |  ordnat   | nästan ordnat |  slumpmässigt  |
 ----------------------------------------------------------
-bubbleSort  |  O( n  )   |   O( n^2  )      |     O( n^2 )      |
+bubbleSort  |  O( n^2  )   |   O( n^2  )      |     O( n^2 )      |
 ----------------------------------------------------------
-insertSort  |  O( n )   |   O(  n^2 )      |     O( n^2 )      |
+insertSort  |  O( n )   |   O(  n )      |     O( n^2 )      |
 ----------------------------------------------------------
 
 ************************************************************************/
@@ -62,11 +62,11 @@ void insertSortP(float *pBegin, float *pEnd){
 }
 
 
-
 void testingSortAlgoritms(){
 
     // Här kan du skriva testkod om du vill experimentera med algoritmerna
     // men i just detta uppdrag är det ingen kravatt skriva testkod.
+
 
 
 

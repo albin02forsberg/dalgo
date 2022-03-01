@@ -1,0 +1,328 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>676</width>
+    <height>447</height>
+   </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="windowTitle">
+   <string>DALGO Paint</string>
+  </property>
+  <widget class="Drawing" name="centralWidget"/>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>676</width>
+     <height>24</height>
+    </rect>
+   </property>
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <widget class="QMenu" name="menuTools">
+    <property name="title">
+     <string>Verktyg</string>
+    </property>
+    <addaction name="actionBlack"/>
+    <addaction name="actionWhite"/>
+    <addaction name="actionRed"/>
+    <addaction name="actionYellow"/>
+    <addaction name="actionBlue"/>
+    <addaction name="actionGreen"/>
+    <addaction name="actionOrange"/>
+    <addaction name="separator"/>
+    <addaction name="actionPixelpenna"/>
+    <addaction name="actionFill"/>
+    <addaction name="actionFull"/>
+    <addaction name="actionFillNRStack"/>
+    <addaction name="actionFillNRFifo"/>
+    <addaction name="separator"/>
+   </widget>
+   <widget class="QMenu" name="menuFil">
+    <property name="title">
+     <string>Fil</string>
+    </property>
+    <addaction name="actionErase"/>
+   </widget>
+   <widget class="QMenu" name="menuHastighet">
+    <property name="title">
+     <string>Hastighet</string>
+    </property>
+    <addaction name="actionSlow"/>
+    <addaction name="actionNormal"/>
+    <addaction name="actionsFast"/>
+    <addaction name="actionUltraFast"/>
+   </widget>
+   <addaction name="menuFil"/>
+   <addaction name="menuTools"/>
+   <addaction name="menuHastighet"/>
+  </widget>
+  <widget class="QToolBar" name="mainToolBar">
+   <property name="iconSize">
+    <size>
+     <width>16</width>
+     <height>16</height>
+    </size>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="actionErase"/>
+   <addaction name="actionSpiral"/>
+   <addaction name="separator"/>
+   <addaction name="actionBlack"/>
+   <addaction name="actionWhite"/>
+   <addaction name="actionRed"/>
+   <addaction name="actionYellow"/>
+   <addaction name="actionBlue"/>
+   <addaction name="actionGreen"/>
+   <addaction name="actionOrange"/>
+   <addaction name="separator"/>
+   <addaction name="actionPixelpenna"/>
+   <addaction name="actionFill"/>
+   <addaction name="actionFillNRStack"/>
+   <addaction name="actionFillNRFifo"/>
+   <addaction name="separator"/>
+   <addaction name="actionSlow"/>
+   <addaction name="actionNormal"/>
+   <addaction name="actionsFast"/>
+   <addaction name="actionUltraFast"/>
+   <addaction name="separator"/>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+  <action name="actionBlack">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="resources.qrc">
+     <normaloff>:/images/black.png</normaloff>:/images/black.png</iconset>
+   </property>
+   <property name="text">
+    <string>Svart</string>
+   </property>
+  </action>
+  <action name="actionWhite">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="resources.qrc">
+     <normaloff>:/images/white.png</normaloff>:/images/white.png</iconset>
+   </property>
+   <property name="text">
+    <string>Vit</string>
+   </property>
+  </action>
+  <action name="actionRed">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="resources.qrc">
+     <normaloff>:/images/red.png</normaloff>:/images/red.png</iconset>
+   </property>
+   <property name="text">
+    <string>Röd</string>
+   </property>
+  </action>
+  <action name="actionYellow">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="resources.qrc">
+     <normaloff>:/images/yellow.png</normaloff>:/images/yellow.png</iconset>
+   </property>
+   <property name="text">
+    <string>Gul</string>
+   </property>
+  </action>
+  <action name="actionBlue">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="resources.qrc">
+     <normaloff>:/images/blue.png</normaloff>:/images/blue.png</iconset>
+   </property>
+   <property name="text">
+    <string>Blå</string>
+   </property>
+  </action>
+  <action name="actionGreen">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="resources.qrc">
+     <normaloff>:/images/green.png</normaloff>:/images/green.png</iconset>
+   </property>
+   <property name="text">
+    <string>Grön</string>
+   </property>
+  </action>
+  <action name="actionOrange">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="resources.qrc">
+     <normaloff>:/images/orange.png</normaloff>:/images/orange.png</iconset>
+   </property>
+   <property name="text">
+    <string>Orange</string>
+   </property>
+  </action>
+  <action name="actionPixelpenna">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="resources.qrc">
+     <normaloff>:/images/pen.png</normaloff>:/images/pen.png</iconset>
+   </property>
+   <property name="text">
+    <string>Pixelpenna</string>
+   </property>
+  </action>
+  <action name="actionFill">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="resources.qrc">
+     <normaloff>:/images/fill1.png</normaloff>:/images/fill1.png</iconset>
+   </property>
+   <property name="text">
+    <string>Fyll</string>
+   </property>
+  </action>
+  <action name="actionErase">
+   <property name="icon">
+    <iconset resource="resources.qrc">
+     <normaloff>:/images/erase.png</normaloff>:/images/erase.png</iconset>
+   </property>
+   <property name="text">
+    <string>Radera allt!</string>
+   </property>
+  </action>
+  <action name="actionFillNRFifo">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="resources.qrc">
+     <normaloff>:/images/fill2.png</normaloff>:/images/fill2.png</iconset>
+   </property>
+   <property name="text">
+    <string>Fyll NR FIFO</string>
+   </property>
+  </action>
+  <action name="actionSlow">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="resources.qrc">
+     <normaloff>:/images/turtle.png</normaloff>:/images/turtle.png</iconset>
+   </property>
+   <property name="text">
+    <string>långsam</string>
+   </property>
+  </action>
+  <action name="actionNormal">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="resources.qrc">
+     <normaloff>:/images/rabbit.png</normaloff>:/images/rabbit.png</iconset>
+   </property>
+   <property name="text">
+    <string>lagom</string>
+   </property>
+  </action>
+  <action name="actionsFast">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="resources.qrc">
+     <normaloff>:/images/rocket.png</normaloff>:/images/rocket.png</iconset>
+   </property>
+   <property name="text">
+    <string>snabb</string>
+   </property>
+  </action>
+  <action name="actionUltraFast">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="resources.qrc">
+     <normaloff>:/images/cspeed.png</normaloff>:/images/cspeed.png</iconset>
+   </property>
+   <property name="text">
+    <string>c-speed</string>
+   </property>
+  </action>
+  <action name="actionFillNRStack">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="resources.qrc">
+     <normaloff>:/images/fill2.png</normaloff>:/images/fill2.png</iconset>
+   </property>
+   <property name="text">
+    <string>Fyll NR Stack</string>
+   </property>
+  </action>
+  <action name="actionFull">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Full</string>
+   </property>
+  </action>
+  <action name="actionSpiral">
+   <property name="text">
+    <string>Spiral</string>
+   </property>
+  </action>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <customwidgets>
+  <customwidget>
+   <class>Drawing</class>
+   <extends>QWidget</extends>
+   <header>drawing.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <resources>
+  <include location="resources.qrc"/>
+ </resources>
+ <connections/>
+</ui>

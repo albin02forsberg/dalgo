@@ -21,9 +21,7 @@ float minimum(const float *pBegin, const float *pEnd){
 
 void studentsTest(){
     // om du vill kan du skriva testkod här
-
-    // Första anropet tog 0.11 sek
-    // Andra anropet tog
+    // Se tider i main
 
     std::cout << "Hello";
 }

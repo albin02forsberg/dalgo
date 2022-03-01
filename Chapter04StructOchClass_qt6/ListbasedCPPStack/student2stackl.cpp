@@ -16,14 +16,17 @@ StackL::StackL(){
 
 StackL::StackL(const StackL& theOther){
     m_size = theOther.m_size;
+    m_pTop = nullptr;
 
     Link *pPreviousLink = nullptr;
     for (const Link *pOthLnk= theOther.m_pTop; pOthLnk!=nullptr ; pOthLnk=(*pOthLnk).m_pNext) {
         Link *pCopy = new Link;
-        (*pCopy).m_data = (*pOthLnk).m_data; (*pCopy).m_pNext = nullptr;
+        (*pCopy).m_data = (*pOthLnk).m_data;
+        (*pCopy).m_pNext = nullptr;
         if (pPreviousLink==nullptr)
             m_pTop = pCopy;
-        else (*pPreviousLink).m_pNext = pCopy; pPreviousLink = pCopy;
+        else (*pPreviousLink).m_pNext = pCopy;
+        pPreviousLink = pCopy;
     }
 }
 

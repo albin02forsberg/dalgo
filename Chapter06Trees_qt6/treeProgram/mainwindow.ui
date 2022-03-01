@@ -1,0 +1,336 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>573</width>
+    <height>385</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Trädprogrammet</string>
+  </property>
+  <widget class="TreeViewWidget" name="centralWidget"/>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>573</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menustd">
+    <property name="title">
+     <string>std</string>
+    </property>
+    <widget class="QMenu" name="menuAVL">
+     <property name="title">
+      <string>AVL</string>
+     </property>
+     <addaction name="actionWorst_Case_AVL"/>
+     <addaction name="actionRandom_AVL"/>
+     <addaction name="actionRandom_NOT_AVL"/>
+    </widget>
+    <addaction name="actionrandom_tree"/>
+    <addaction name="menuAVL"/>
+    <addaction name="separator"/>
+    <addaction name="actionshow_Colors"/>
+    <addaction name="actionshow_Numbers"/>
+   </widget>
+   <widget class="QMenu" name="menuvisual">
+    <property name="title">
+     <string>visual</string>
+    </property>
+    <addaction name="actionSlow"/>
+    <addaction name="actionNormal"/>
+    <addaction name="actionFast"/>
+    <addaction name="actionUltrafast"/>
+   </widget>
+   <widget class="QMenu" name="menuUppdrag">
+    <property name="title">
+     <string>Uppdrag</string>
+    </property>
+    <widget class="QMenu" name="menutr_dkl_ttring">
+     <property name="title">
+      <string>trädklättring</string>
+     </property>
+     <addaction name="actiontestTree1"/>
+     <addaction name="separator"/>
+     <addaction name="actionPreOrder"/>
+     <addaction name="actionInOrder"/>
+     <addaction name="actionPostOrder"/>
+     <addaction name="separator"/>
+     <addaction name="actionflashNodesAtIncreasingDepth"/>
+     <addaction name="separator"/>
+     <addaction name="actionheight"/>
+     <addaction name="actionnumberOfNodes"/>
+    </widget>
+    <widget class="QMenu" name="menuS_ktr_d_2">
+     <property name="title">
+      <string>Sökträd</string>
+     </property>
+     <addaction name="actioninsert"/>
+     <addaction name="actioncontains"/>
+     <addaction name="actiondelete"/>
+     <addaction name="separator"/>
+     <addaction name="actioncreate_random_search_tree"/>
+     <addaction name="separator"/>
+     <addaction name="insert100Random"/>
+     <addaction name="remove100Random"/>
+     <addaction name="insertRemove1000RandomKeys"/>
+    </widget>
+    <widget class="QMenu" name="menuSerialisering_2">
+     <property name="title">
+      <string>Serialisering</string>
+     </property>
+     <addaction name="actionsave"/>
+     <addaction name="actionread"/>
+    </widget>
+    <addaction name="menutr_dkl_ttring"/>
+    <addaction name="menuS_ktr_d_2"/>
+    <addaction name="menuSerialisering_2"/>
+   </widget>
+   <widget class="QMenu" name="menutestfunktioner">
+    <property name="title">
+     <string>testfunktioner</string>
+    </property>
+    <addaction name="actiontestfunktion1"/>
+    <addaction name="actiontestfunktion2"/>
+    <addaction name="actiontestfunktion3"/>
+    <addaction name="actiontestfunktion4"/>
+   </widget>
+   <addaction name="menustd"/>
+   <addaction name="menuvisual"/>
+   <addaction name="menuUppdrag"/>
+   <addaction name="menutestfunktioner"/>
+  </widget>
+  <widget class="QToolBar" name="mainToolBar">
+   <property name="iconSize">
+    <size>
+     <width>16</width>
+     <height>16</height>
+    </size>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="actionrandom_tree"/>
+   <addaction name="separator"/>
+   <addaction name="actionSlow"/>
+   <addaction name="actionNormal"/>
+   <addaction name="actionFast"/>
+   <addaction name="actionUltrafast"/>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+  <action name="actionrandom_tree">
+   <property name="text">
+    <string>create random tree</string>
+   </property>
+  </action>
+  <action name="actioninsert">
+   <property name="text">
+    <string>insert...</string>
+   </property>
+  </action>
+  <action name="actiondelete">
+   <property name="text">
+    <string>delete ...</string>
+   </property>
+  </action>
+  <action name="insert100Random">
+   <property name="text">
+    <string>insert 100 random keys</string>
+   </property>
+  </action>
+  <action name="remove100Random">
+   <property name="text">
+    <string>remove 100 random keys</string>
+   </property>
+  </action>
+  <action name="insertRemove1000RandomKeys">
+   <property name="text">
+    <string>insert/remove 1000 random keys</string>
+   </property>
+  </action>
+  <action name="actionSlow">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="resources.qrc">
+     <normaloff>:/images/turtle.png</normaloff>:/images/turtle.png</iconset>
+   </property>
+   <property name="text">
+    <string>långsam</string>
+   </property>
+  </action>
+  <action name="actionNormal">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="resources.qrc">
+     <normaloff>:/images/rabbit.png</normaloff>:/images/rabbit.png</iconset>
+   </property>
+   <property name="text">
+    <string>lagom</string>
+   </property>
+  </action>
+  <action name="actionFast">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="resources.qrc">
+     <normaloff>:/images/rocket.png</normaloff>:/images/rocket.png</iconset>
+   </property>
+   <property name="text">
+    <string>snabb</string>
+   </property>
+  </action>
+  <action name="actionUltrafast">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="resources.qrc">
+     <normaloff>:/images/cspeed.png</normaloff>:/images/cspeed.png</iconset>
+   </property>
+   <property name="text">
+    <string>lightspeed</string>
+   </property>
+  </action>
+  <action name="actionPreOrder">
+   <property name="text">
+    <string>flashPreOrder</string>
+   </property>
+  </action>
+  <action name="actionInOrder">
+   <property name="text">
+    <string>flashInOrder</string>
+   </property>
+  </action>
+  <action name="actionPostOrder">
+   <property name="text">
+    <string>flashPostOrder</string>
+   </property>
+  </action>
+  <action name="actionheight">
+   <property name="text">
+    <string>height</string>
+   </property>
+  </action>
+  <action name="actionnumberOfNodes">
+   <property name="text">
+    <string>numberOfNodes</string>
+   </property>
+  </action>
+  <action name="actionsave">
+   <property name="text">
+    <string>save...</string>
+   </property>
+  </action>
+  <action name="actionread">
+   <property name="text">
+    <string>read...</string>
+   </property>
+  </action>
+  <action name="actionflashNodesAtIncreasingDepth">
+   <property name="text">
+    <string>flashNodesAtIncreasingDepth</string>
+   </property>
+  </action>
+  <action name="actioncreate_random_search_tree">
+   <property name="text">
+    <string>create random search tree...</string>
+   </property>
+  </action>
+  <action name="actionWorst_Case_AVL">
+   <property name="text">
+    <string>Worst Case AVL</string>
+   </property>
+  </action>
+  <action name="actionRandom_AVL">
+   <property name="text">
+    <string>Random AVL</string>
+   </property>
+  </action>
+  <action name="actionRandom_NOT_AVL">
+   <property name="text">
+    <string>Random NOT AVL</string>
+   </property>
+  </action>
+  <action name="actionshow_Colors">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>show Colors</string>
+   </property>
+  </action>
+  <action name="actionshow_Numbers">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>show Numbers</string>
+   </property>
+  </action>
+  <action name="actioncontains">
+   <property name="text">
+    <string>contains?...</string>
+   </property>
+  </action>
+  <action name="actiontestTree1">
+   <property name="text">
+    <string>testTree1</string>
+   </property>
+  </action>
+  <action name="actiontestfunktion1">
+   <property name="text">
+    <string>testfunktion1</string>
+   </property>
+  </action>
+  <action name="actiontestfunktion2">
+   <property name="text">
+    <string>testfunktion2</string>
+   </property>
+  </action>
+  <action name="actiontestfunktion3">
+   <property name="text">
+    <string>testfunktion3</string>
+   </property>
+  </action>
+  <action name="actiontestfunktion4">
+   <property name="text">
+    <string>testfunktion4</string>
+   </property>
+  </action>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <customwidgets>
+  <customwidget>
+   <class>TreeViewWidget</class>
+   <extends>QWidget</extends>
+   <header>treeviewwidget.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <resources>
+  <include location="resources.qrc"/>
+ </resources>
+ <connections/>
+</ui>

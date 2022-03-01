@@ -1,0 +1,22 @@
+<RCC>
+    <qresource prefix="/">
+        <file>images/erase.png</file>
+        <file>images/fill2.png</file>
+        <file>images/fill1.png</file>
+        <file>images/rtest.png</file>
+        <file>images/red.png</file>
+        <file>images/orange.png</file>
+        <file>images/black.png</file>
+        <file>images/blue.png</file>
+        <file>images/green.png</file>
+        <file>images/yellow.png</file>
+        <file>images/pen.png</file>
+        <file>images/white.png</file>
+        <file>images/redo.png</file>
+        <file>images/undo.png</file>
+        <file>images/rocket.png</file>
+        <file>images/rabbit.png</file>
+        <file>images/turtle.png</file>
+        <file>images/cspeed.png</file>
+    </qresource>
+</RCC>

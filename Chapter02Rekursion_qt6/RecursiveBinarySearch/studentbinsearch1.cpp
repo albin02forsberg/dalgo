@@ -30,7 +30,7 @@ bool containedInSortedarray(int x, const int* pBegin, const int* pEnd){
         return false;
     }
 
-    if(size == 1) {
+    if(size == 1 && *pBegin == x) {
         if(*pBegin == x){
             return true;
         }

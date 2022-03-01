@@ -18,9 +18,12 @@ int otherPin(int pinFrom, int pinTo){
 
 
 void moveDiscs(int numberOfDiscs, int pinFrom, int pinTo){
-    if(numberOfDiscs == 0){
+    if(numberOfDiscs == 1){
+        TOWERS.moveDisc(pinFrom, pinTo);
         return;
     }
+
+//    std::cout << "Number of discs: " << numberOfDiscs << std::endl << "PinFrom: " << pinFrom << std::endl;
 
     moveDiscs(numberOfDiscs-1, pinFrom, otherPin(pinFrom, pinTo));
     TOWERS.moveDisc(pinFrom, pinTo);
