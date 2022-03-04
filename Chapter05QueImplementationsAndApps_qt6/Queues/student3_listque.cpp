@@ -32,7 +32,6 @@ void LQue::pushBack(float value) {
 
     m_pBack->m_pNext = pLink;
     m_pBack = m_pBack->m_pNext;
-    m_pBack->m_value = value;
     m_size++;
 }
 

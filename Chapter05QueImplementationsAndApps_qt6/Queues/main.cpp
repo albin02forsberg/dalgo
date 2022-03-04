@@ -12,7 +12,7 @@ int main(int argc, char *argv[])
 
     bool testAQue  = true;
     bool testLQue   = true;
-    bool testADeque   = true;
+    bool testADeque   = false;
 
     ragnarsTest(testAQue, testLQue, testADeque);
 

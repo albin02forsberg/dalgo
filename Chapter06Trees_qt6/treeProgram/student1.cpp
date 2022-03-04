@@ -49,16 +49,15 @@ void flashPreOrder(Node *pTree){
     pTree->flash();
     flashPreOrder(pTree->m_pLeft);
     flashPreOrder(pTree->m_pRight);
-    pTree->makeRed();
 }
 
 void flashInOrder(Node *pTree){
     if(pTree == nullptr){
         return;
     }
-    pTree->flash();
+
     flashInOrder(pTree->m_pLeft);
-    pTree->makeRed();
+    pTree->flash();
     flashInOrder(pTree->m_pRight);
 }
 
@@ -66,12 +65,10 @@ void flashPostOrder(Node *pTree){
     if(pTree == nullptr){
         return;
     }
-    pTree->flash();
 
     flashPostOrder(pTree->m_pLeft);
     flashPostOrder(pTree->m_pRight);
-
-    pTree->makeRed();
+    pTree->flash();
 }
 
 
