@@ -76,12 +76,17 @@ void MinHeap::percolateDown(int ix){
     while(ix*2 <= m_size){
         int child = ix*2;
 
+        // Checks if the left child is bigger than the right child
+        // if it is, continue on right child.
+
         if(child != m_size && n_theArray[child + 1] < n_theArray[child]){
             child++;
         }
+
         if(n_theArray[child] >= value){
             break;
         }
+
         n_theArray[ix] = n_theArray[child];
         ix = child;
     }

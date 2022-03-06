@@ -9,7 +9,7 @@ using namespace std;
 
 
 const char* nameOfStudent2(){
-    return "Homer Simpson";
+    return "Albin Forsberg";
 }
 
 
