@@ -22,21 +22,6 @@ MinHeap::~MinHeap(){
 }
 
 void MinHeap::insert(int data){
-
-//    if(m_size == m_sizeOfArray) {
-//        return;
-//    }
-
-//    m_size++;
-//    int i = m_size;
-//    n_theArray[i] = data;
-
-//    while(i != 1 && n_theArray[i] < n_theArray[i-1]){
-//        std::swap(n_theArray[i], n_theArray[i-1]);
-//        i--;
-//    }
-
-
     if (m_size == m_sizeOfArray){
            return;
        }

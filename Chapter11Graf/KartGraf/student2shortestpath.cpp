@@ -3,6 +3,7 @@
 #include <queue>
 #include <assert.h>
 #include <QDebug>
+#include <iostream>
 
 using namespace std;
 
@@ -45,17 +46,27 @@ vector<Ixnode> shortestPathBetweenNodes(const std::vector<Node>& graph,
 
     priority_queue<Input, vector<Input>, Input> inputsToBeExamined;
 
-
     inputsToBeExamined.push( Input(-1, ixStart, 0.0) );
 
-
     while (!inputsToBeExamined.empty()){
+        inputsToBeExamined.pop();
+        if(infoAboutNode[inputsToBeExamined.top().m_ixTo].m_hasKnownDistance ){
+            continue;
+        }
 
-        // TODO
+        if(inputsToBeExamined.top().m_ixTo == ixStop){
+            vector<Ixnode> nodes;
+
+            int s = infoAboutNode[ixStop].m_ixPrevious;
+
+            while(s != -1){
+                nodes.push_back(s);
+                s = infoAboutNode[s].m_ixPrevious;
+            }
+        }
+
+
     }
-
-
-
 }
 
 
